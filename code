@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+   
+    //declaration of global variables utilized in the main method 
+    static int B;
+    static int H;
+    static boolean flag = false;
+
+    //constructor declaration and its function
+static{
+    Scanner input = new Scanner(System.in);
+
+    //error detection of the specified condition
+    try{      
+        int Breadth = input.nextInt();
+        int height = input.nextInt();
+    
+        if(Breadth<=0||height<=0){
+            throw new Exception("Breadth and height must be positive");        
+        }
+        else{
+            B = Breadth;
+            H = height;
+            flag=true;
+        }
+    }catch(Exception e){
+        System.out.println(e);
+    }
+
+   input.close();
+}
+
+public static void main(String[] args){
+		if(flag){
+			int area=B*H;
+			System.out.print(area);
+		}
+		
+	}//end of main
+
+}//end of class
+
